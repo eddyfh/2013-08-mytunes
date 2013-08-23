@@ -7,13 +7,11 @@
     <script src="lib/underscore.js"></script>
     <script src="lib/backbone.js"></script>
 
-    <script src="src/data.js"></script>
-
+    
     <script src="src/Song.js"></script>
     <script src="src/Songs.js"></script>
     <script src="src/SongQueue.js"></script>
-    <script src="src/App.js"></script>
-
+    
     <script src="src/PlayerView.js"></script>
     <script src="src/LibraryView.js"></script>
     <script src="src/LibraryEntryView.js"></script>
@@ -23,22 +21,23 @@
 
     <script>
       $(function(){
-        // set up model objects
-        var library = new Songs(songData);
-        debugger;
-    //     var queuetest = new SongQueue({
-    //   artist: 'data',
-    //   url: '/test/testsong.mp3',
-    //   title:'test song'
-    // });
-        // queuetest.add(songDataTest);
-        var app = new App({library: library});
+        fakeSongs = new SongQueue([
+      {
+        artist: 'data',
+        url: '/test/testsong.mp3',
+        title:'test song'
+      },
+      {
+        artist: 'data',
+        url: '/test/testsong2.mp3',
+        title:'test song 2'
+      }
+    ]);
 
-        // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
 
-        // put the view onto the screen
-        $('body').append(appView.render());
+    view = new SongQueueView({collection: fakeSongs});
+    view.render();
+    
       });
     </script>
   </body>

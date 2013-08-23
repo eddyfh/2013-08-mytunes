@@ -13,15 +13,20 @@ var App = Backbone.Model.extend({
       new SongQueueEntryView({model: song}).render();
     }, this);
 
-    params.library.on('nextsong', function(song){
-      // debugger;
-      this.get('songQueue').shift();
-      this.set('currentSong', this.get('songQueue').models[0]);
-    }, this);
+    // this.get('songQueue').on('add', this.checkFirst, this);
 
-    // this.get('songQueue').shift();
 
-  }
+
+    // params.library.on('nextsong', function(song){
+    //   console.log('ran');
+    //   this.get('songQueue').shift();
+    //   this.set('currentSong', this.get('songQueue').models[0]);
+    // }, this);
+
+  },
+
+
+
 
 });
 

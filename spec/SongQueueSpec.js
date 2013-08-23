@@ -24,6 +24,7 @@ describe('SongQueue', function() {
       it('plays it', function() {
         var songQueue = new SongQueue();
         songQueue.add(songData1);
+        // debugger;
         expect(playSpy).toHaveBeenCalled();
       });
     });
@@ -31,6 +32,7 @@ describe('SongQueue', function() {
     describe('when it is not the only song in the song queue', function() {
       it('does nothing', function() {
         var songQueue = new SongQueue(songData1);
+        // debugger;
         songQueue.add(songData2);
         expect(playSpy).not.toHaveBeenCalled();
       });

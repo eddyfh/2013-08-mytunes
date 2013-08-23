@@ -17,6 +17,7 @@ describe('SongQueueView', function() {
   });
 
   it('creates SongQueueEntryViews for each queued song & renders them', function(){
+    // debugger
     spyOn(SongQueueEntryView.prototype, 'render').andCallThrough();
     view = new SongQueueView({collection: fakeSongs});
     view.render();

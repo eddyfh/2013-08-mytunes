@@ -2,7 +2,7 @@ var PlayerView = Backbone.View.extend({
 
   el: '<audio controls autoplay />',
 
-  events: {
+  events: {               // SHOULD PROBABLY NOT DEFINE HERE AND IN SONGQUEUE
     'ended': function() {
       this.model.nextsong();
     }
@@ -18,8 +18,7 @@ var PlayerView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log('render');
-    return this.$el.attr('src', this.model.get('url'));
+    return this.$el.attr('src', this.model.get('url')); // SHOULD NOT USE MODEL?
   }
 
 });
